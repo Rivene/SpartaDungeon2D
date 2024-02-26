@@ -50,9 +50,10 @@ public class PlayerController : MonoBehaviour
             Attack();
         }
 
-        void Attack()
-        {
-            animator.SetTrigger("Attack");
-        }
+    }
+
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
     }
 }
