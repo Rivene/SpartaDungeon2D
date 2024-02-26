@@ -22,7 +22,7 @@ public class ItemPickup : MonoBehaviour
 
             pickupText.text = "[Space] 줍기";
 
-            if(Input.GetKeyUp(KeyCode.Space)) //아이템 줍기
+            if(Input.GetKeyDown(KeyCode.Space)) //아이템 줍기
             {
                 //인벤토리
                 Destroy(other.gameObject);
