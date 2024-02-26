@@ -5,31 +5,35 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    [SerializeField] private bool destroyOnPickup = true;
     [SerializeField] private LayerMask pickup;
 
     public TextMeshProUGUI pickupText;
 
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerStay2D(Collider2D other)
     {
         if(pickup.value == (pickup.value | (1<< other.gameObject.layer)))
         {
-            pickupText.text = "[Space] 아이템 줍기";
+            Vector3 offset = new Vector3(0, 2f, 0);
+            Vector3 pickupTextPosition = transform.position + offset;
+            //플레이어 위치를 기준 스크린 좌표
+            Vector3 screenPosition = Camera.main.WorldToScreenPoint(pickupTextPosition);
+            pickupText.rectTransform.position = screenPosition;
 
-            if(Input.GetKeyDown(KeyCode.Space))
+            pickupText.text = "[Space] 줍기";
+
+            if(Input.GetKeyUp(KeyCode.Space)) //아이템 줍기
             {
                 //인벤토리
+                Destroy(other.gameObject);
+                
             }
-
-            if (destroyOnPickup) // 픽업시 오브젝트 삭제
-            {
-                Destroy(gameObject);
-            }
+           
         }
     }
 
-    private void ItemSpawn(Vector3 spawnPos)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        //스폰 포지션 위치
+        pickupText.text = "";
     }
 }
