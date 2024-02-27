@@ -16,6 +16,4 @@ MonoBehaviour:
   discription: "\uCD94\uAC00\uC774\uB3D9\uC18D\uB3C4"
   icon: {fileID: 21300000, guid: 53e0425deea8aab4e92f51e700ddaa7c, type: 3}
   maxAmount: 5
-  plusHp: 0
-  plusSpeed: 3
-  plusAttack: 0
+  type: 1
