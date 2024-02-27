@@ -31,11 +31,11 @@ public class Inventory : MonoBehaviour
             activated = !activated;
 
             if(activated) // true면 인벤토리 열림
-            {
+            {               
                 OpenInventory();
             }
             else
-            {
+            {               
                 CloseInventory();
             }
         }
@@ -43,6 +43,7 @@ public class Inventory : MonoBehaviour
 
     private void OpenInventory()
     {
+        
         inventoryUi.SetActive(true);
     }
 
@@ -57,7 +58,7 @@ public class Inventory : MonoBehaviour
         {
             if (slots[i].item != null)
             {
-                if (slots[i].item.ItemName == _item.ItemName) //같은 이름의 아이템일 때 갯수 추가
+                if (slots[i].item.itemName == _item.itemName) //같은 이름의 아이템일 때 갯수 추가
                 {
                     slots[i].SetSlotCount(count);
                     return;

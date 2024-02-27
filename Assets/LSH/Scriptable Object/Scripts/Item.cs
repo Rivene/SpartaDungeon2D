@@ -6,11 +6,16 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     [Header("Info")]
-    public string ItemName;
+    public string itemName;
     public string discription;
     public Sprite icon;
 
     [Header("Stacking")]
     public int maxAmount;
+
+    [Header("Stats")]
+    public float plusHp;
+    public float plusSpeed;
+    public float plusAttack;
 
 }

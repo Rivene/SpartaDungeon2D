@@ -5,14 +5,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour
+public class Slot : MonoBehaviour, IPointerClickHandler
 {
     public Item item;
     public int itemCount;
     public Image itemImage;
 
     [SerializeField] private TextMeshProUGUI countText;
-
 
     public void AddItem(Item _item, int count = 1)
     {
@@ -23,7 +22,6 @@ public class Slot : MonoBehaviour
 
     }
 
-    
 
     public void SetSlotCount(int count)
     {
@@ -45,6 +43,18 @@ public class Slot : MonoBehaviour
 
     }
 
-
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(eventData.button == PointerEventData.InputButton.Right) // 오른쪽 클릭시 아이템 사용
+        {
+            if (item != null)
+            {
+                Debug.Log("아이템 사용");
+                SetSlotCount(-1);
+                //스탯변화
+            }
+        }
+        
+    }
 
 }
