@@ -44,5 +44,16 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+
+        if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼을 누를 때
+        {
+            Attack();
+        }
+
+    }
+
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
     }
 }
