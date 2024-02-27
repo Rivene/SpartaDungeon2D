@@ -19,8 +19,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //움직이기
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+
         Vector2 movement = new Vector2(horizontalInput, verticalInput);
         rb.velocity = movement * moveSpeed;
 
