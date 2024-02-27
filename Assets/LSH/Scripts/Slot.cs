@@ -11,7 +11,23 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public int itemCount;
     public Image itemImage;
 
+    private CharacterStatsHandler statsHandler;
+    private HealItem heal;
+    private SpeedItem speed;
+    private AttackItem attack;
+    private AttackSO attackSO;
+
     [SerializeField] private TextMeshProUGUI countText;
+
+
+    private void Start()
+    {
+        statsHandler = FindObjectOfType<CharacterStatsHandler>();
+        heal = FindObjectOfType<HealItem>();
+        speed = FindObjectOfType<SpeedItem>();
+        attack = FindObjectOfType<AttackItem>();
+        attackSO = FindObjectOfType<AttackSO>();
+    }
 
     public void AddItem(Item _item, int count = 1)
     {
@@ -45,16 +61,34 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(eventData.button == PointerEventData.InputButton.Right) // 오른쪽 클릭시 아이템 사용
+        if (eventData.button == PointerEventData.InputButton.Right) // 오른쪽 클릭시 아이템 사용
         {
             if (item != null)
             {
                 Debug.Log("아이템 사용");
-                SetSlotCount(-1);
                 //스탯변화
+
+                //heal.UseHeal(statsHandler);
+
+                switch (item.type)
+                {
+                    case ItemType.Heal:
+                        heal.UseHeal(statsHandler);
+                        break;
+
+                    case ItemType.Speed:
+                        speed.UseSpeed(statsHandler);
+                        break;
+
+                    case ItemType.Attack:
+                        attack.UseAttack(attackSO);
+                        break;
+                }
+
+                SetSlotCount(-1);
             }
         }
-        
+
     }
 
 }

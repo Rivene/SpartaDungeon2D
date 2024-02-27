@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9081751788274900412}
   - component: {fileID: 7350780593613654746}
   - component: {fileID: -2796137520125272931}
+  - component: {fileID: -1754412399578165755}
   m_Layer: 6
   m_Name: flask_big_yellow
   m_TagString: Untagged
@@ -144,3 +145,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 142b8c14180ad5146a2d7c508652e95d, type: 2}
+--- !u!114 &-1754412399578165755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4283641418436220933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43e7e28fd967624e8cf0875e469da03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedValue: 3

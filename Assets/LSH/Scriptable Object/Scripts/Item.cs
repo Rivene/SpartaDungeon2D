@@ -1,6 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
+
+public enum ItemType //포션 사용을 위해 
+{
+    Heal,
+    Speed,
+    Attack,
+}
 
 [CreateAssetMenu(fileName = "Item", menuName = "Item")]
 public class Item : ScriptableObject
@@ -13,9 +21,7 @@ public class Item : ScriptableObject
     [Header("Stacking")]
     public int maxAmount;
 
-    [Header("Stats")]
-    public float plusHp;
-    public float plusSpeed;
-    public float plusAttack;
+    [Header("Type")]
+    public ItemType type;
 
 }
