@@ -5,10 +5,17 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
+    private Inventory inventory;
+    private bool pickupActivated = false;
     [SerializeField] private LayerMask pickup;
 
+    
     public TextMeshProUGUI pickupText;
 
+    private void Start()
+    {
+        inventory = GetComponent<Inventory>();
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -24,7 +31,7 @@ public class ItemPickup : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Space)) //아이템 줍기
             {
-                //인벤토리
+                inventory.AquireItem(other.transform.GetComponent<Items>().item); //아이템 정보
                 Destroy(other.gameObject);
                 
             }
