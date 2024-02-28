@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum StatsChangeType
+public enum _StatsChangeType
 {
     Add,
     Multiple,
@@ -11,10 +11,10 @@ public enum StatsChangeType
 }
 
 [Serializable]
-public class CharacterStats
+public class _CharacterStats
 {
-    public StatsChangeType statsChangeType;
+    public _StatsChangeType statsChangeType;
     [Range(1, 100)] public int maxHealth;
     [Range(1f, 20f)] public float speed;
-    public AttackSO attackSO;
+    public _AttackSO attackSO;
 }

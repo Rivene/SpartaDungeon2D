@@ -7,7 +7,7 @@ public class RangedAttackController : MonoBehaviour
 {
     [SerializeField] private LayerMask levelCollisionLayer;
 
-    private RangedAttackData _attackData;
+    private _RangedAttackData _attackData;
     private float _currentDuration;
     private Vector2 _direction;
     private bool _isReady;
@@ -52,7 +52,7 @@ public class RangedAttackController : MonoBehaviour
     }
 
 
-    public void InitializeAttack(Vector2 direction, RangedAttackData attackData, ProjectileManager projectileManager)
+    public void InitializeAttack(Vector2 direction, _RangedAttackData attackData, ProjectileManager projectileManager)
     {
         _projectileManager = projectileManager;
         _attackData = attackData;
