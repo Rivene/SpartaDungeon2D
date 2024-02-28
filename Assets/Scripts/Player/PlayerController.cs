@@ -16,11 +16,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private float curTime;
-    public float coolTime = 0.1f;
-    public Transform pos;
-    public Vector2 boxSize;
-
     void Update()
     {
         //움직이기
@@ -50,37 +45,15 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;
         }
 
-        if (curTime <= 0) // 마우스 왼쪽 버튼을 누를 때
+        if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼을 누를 때
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
-                foreach (Collider2D collider in collider2Ds)
-                {
-                    if(collider.tag == "Enemy")
-                    {
-                        Debug.Log(collider.tag);
-                    }
-                }
-                animator.SetTrigger("Attack");
-                curTime = coolTime;
-            }
+            Attack();
         }
-        else
-        {
-            curTime -= Time.deltaTime;
-        }
-        Attack();
+
     }
 
     void Attack()
     {
         animator.SetTrigger("Attack");
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(pos.position, boxSize);
     }
 }
