@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpeedItem : MonoBehaviour
 {
     [SerializeField] float speedValue = 2f;
-    private PlayerController controller;
+    [SerializeField] private PlayerController playerController;
+
 
     private void Awake()
     {
@@ -13,9 +14,9 @@ public class SpeedItem : MonoBehaviour
     }
     public void UseSpeed(CharacterStatsHandler statsHandler)
     {
-        controller.moveSpeed += speedValue;
-        statsHandler.CurrentStates.speed = controller.moveSpeed ;
-        Debug.Log("이동속도: " + statsHandler.CurrentStates.speed);
-
+        playerController.moveSpeed += speedValue;
+        statsHandler.CurrentStates.speed = playerController.moveSpeed;
+        Debug.Log("이동속도: " + statsHandler.CurrentStates.speed);      
     }
+   
 }
