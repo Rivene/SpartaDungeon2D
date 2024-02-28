@@ -25,8 +25,8 @@ public class TopDownPlayerAnimationController : TopDownAnimations
 
         if (_healthSystem != null)
         {
-           // _healthSystem.OnDamage += Hit;
-           // _healthSystem.OnInvincibilityEnd += InvincibilityEnd;
+            //_healthSystem.OnDamage += Hit;
+            //_healthSystem.OnInvincibilityEnd += InvincibilityEnd;
         }
     }
 
