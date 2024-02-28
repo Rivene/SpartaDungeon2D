@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public int attackDamage = 10;
+    public LayerMask monsterLayer;
+
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -54,7 +58,6 @@ public class PlayerController : MonoBehaviour
         {
             Attack();
         }
-
     }
 
     void Attack()
@@ -62,11 +65,26 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Attack");
     }
 
-    private void OnTriggerEnter2D(Collider2D coll)
+    //private void OnTriggerEnter2D(Collider2D coll)
+    //{
+    //    if (coll.gameobject.comparetag("monster"))
+    //    {
+    //        monster monster = coll.gameobject.getcomponent<monster>();
+    //        if (monster != null)
+    //        {
+
+    //            monster.takedamage(attackdamage);
+    //        }
+    //    }
+
+    //    else if (coll.gameObject.CompareTag("DungeonPortal") && loader != null)
+    //    {
+    //        loader.isDungeonPortal();
+    //    }
+    //}
+
+    void Die()
     {
-        if (coll.gameObject.name == "DungeonPortal" && loader != null)
-        {
-            loader.isDungeonPortal();
-        }
+        Destroy(gameObject);
     }
 }
