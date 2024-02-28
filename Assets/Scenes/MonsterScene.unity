@@ -218,12 +218,14 @@ GameObject:
   - component: {fileID: 93229271}
   - component: {fileID: 93229270}
   - component: {fileID: 93229269}
-  - component: {fileID: 93229268}
-  - component: {fileID: 93229267}
-  - component: {fileID: 93229266}
-  - component: {fileID: 93229265}
+  - component: {fileID: 93229279}
+  - component: {fileID: 93229278}
+  - component: {fileID: 93229277}
+  - component: {fileID: 93229276}
+  - component: {fileID: 93229275}
+  - component: {fileID: 93229274}
+  - component: {fileID: 93229273}
   - component: {fileID: 93229272}
-  - component: {fileID: 93229263}
   m_Layer: 6
   m_Name: OrcShaman
   m_TagString: Untagged
@@ -231,77 +233,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &93229263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93229262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92b79f32c8e6e1546a3911c1dcc2c682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &93229265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93229262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fa626b3e256444418e5c867a62dac6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  armRenderer: {fileID: 14541471}
-  armPivot: {fileID: 588452373}
-  characterRenderer: {fileID: 1480966366}
---- !u!114 &93229266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93229262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841f916ffcc9c784281f5f486b34f6b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followRange: 15
-  shootRange: 10
---- !u!114 &93229267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93229262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 163c544ee4351f1469ae4a535444d3a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &93229268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93229262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5be719d39101b948930f03c1d68e651, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseStats:
-    statsChangeType: 2
-    maxHealth: 3
-    speed: 2
-    attackSO: {fileID: 11400000, guid: e9cd80d903877c44d8dde1aefa65b7d5, type: 2}
-  statsModifiers: []
 --- !u!50 &93229269
 Rigidbody2D:
   serializedVersion: 4
@@ -400,10 +331,106 @@ MonoBehaviour:
   m_GameObject: {fileID: 93229262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f8a26614a7ce44f8927ebe2a104f3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f60de2b26748d144afeac8b4c410f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &93229273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93229262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26df17559d5ed514bbaf1b47b6672977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthChangeDelay: 0.5
+--- !u!114 &93229274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93229262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2862f87c0581ea04a8469a11a1429613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &93229275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93229262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae010d87ee30e4e9a3050abd016b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPosition: {fileID: 691813845}
+--- !u!114 &93229276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93229262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad242cb2f3d25544aa1bb06463dd67c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armRenderer: {fileID: 14541471}
+  armPivot: {fileID: 588452373}
+  characterRenderer: {fileID: 1480966366}
+--- !u!114 &93229277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93229262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293c008190e7acd42951ff3ae65812c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followRange: 15
+  shootRange: 10
+--- !u!114 &93229278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93229262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72261a9e5fca84f42a6da41e46fbb177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStats:
+    statsChangeType: 2
+    maxHealth: 3
+    speed: 2
+    attackSO: {fileID: 11400000, guid: 576ac0c638d63fe49a656c47cd2dc56d, type: 2}
+  statsModifiers: []
+--- !u!114 &93229279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93229262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 663767fc210c0604a996c3506a63b270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &201923199
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,9 +821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25168f2158826574dac5cad4cac635ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followRange: 20
-  targetTag: Player
-  characterRenderer: {fileID: 256730310}
 --- !u!114 &1010190983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,12 +845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5be719d39101b948930f03c1d68e651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseStats:
-    statsChangeType: 0
-    maxHealth: 0
-    speed: 0
-    attackSO: {fileID: 11400000, guid: db9aae257a3a62644ace6eca7b074cd4, type: 2}
-  statsModifiers: []
 --- !u!50 &1010190985
 Rigidbody2D:
   serializedVersion: 4

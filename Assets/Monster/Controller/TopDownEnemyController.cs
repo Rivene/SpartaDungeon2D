@@ -5,6 +5,7 @@ using UnityEngine;
 public class TopDownEnemyController : TopDownCharacterController
 {
     GameManager gameManager;
+
     protected Transform ClosestTarget { get; private set; }
 
     protected override void Awake()
@@ -23,7 +24,7 @@ public class TopDownEnemyController : TopDownCharacterController
 
     }
 
-    protected float DistanceToTarget()
+    protected float DistanceTotarget()
     {
         return Vector3.Distance(transform.position, ClosestTarget.position);
     }

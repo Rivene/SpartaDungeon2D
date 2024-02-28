@@ -9,7 +9,7 @@ public class SpeedItem : MonoBehaviour
 
     private void Awake()
     {
-        controller = FindObjectOfType<PlayerController>();
+       controller = FindObjectOfType<PlayerController>();
     }
     public void UseSpeed(CharacterStatsHandler statsHandler)
     {

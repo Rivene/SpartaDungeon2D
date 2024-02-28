@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "RangedAttackData", menuName = "TopDownController/Attacks/Ranged", order = 1)]
-public class _RangedAttackData : _AttackSO
+
+public class RangedAttackData : AttackSO
 {
-    [Header("Ranged Attack Data")]
+    [Header("Ranged Attack DAta")]
     public string bulletNameTag;
     public float duration;
     public float spread;

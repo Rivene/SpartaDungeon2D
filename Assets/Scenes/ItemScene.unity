@@ -1609,10 +1609,10 @@ GameObject:
   - component: {fileID: 1859758181}
   - component: {fileID: 1859758180}
   - component: {fileID: 1859758179}
-  - component: {fileID: 1859758178}
   - component: {fileID: 1859758177}
   - component: {fileID: 1859758176}
   - component: {fileID: 1859758175}
+  - component: {fileID: 1859758184}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -1668,18 +1668,6 @@ MonoBehaviour:
     speed: 1
     attackSO: {fileID: 11400000, guid: 31b3ab57607e59d41ace501cbf8232d9, type: 2}
   statsModifiers: []
---- !u!114 &1859758178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859758174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46695e6b8368fdd4482cde2ca772aa3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1859758179
 Animator:
   serializedVersion: 5
@@ -1840,6 +1828,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1859758184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859758174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8261528afc533e49a2f0ff08460b495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1001 &1860797037
 PrefabInstance:
   m_ObjectHideFlags: 0
