@@ -23,8 +23,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //움직이기
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
+
         Vector2 movement = new Vector2(horizontalInput, verticalInput);
         rb.velocity = movement * moveSpeed;
 
@@ -48,6 +49,17 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+
+        if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼을 누를 때
+        {
+            Attack();
+        }
+
+    }
+
+    void Attack()
+    {
+        animator.SetTrigger("Attack");
     }
 
     private void OnTriggerEnter2D(Collider2D coll)
