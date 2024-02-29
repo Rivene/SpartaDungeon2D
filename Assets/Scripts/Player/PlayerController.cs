@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.PlayerSettings;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private SceneLoader loader;
 
-    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,12 +20,16 @@ public class PlayerController : MonoBehaviour
         loader = FindObjectOfType<SceneLoader>();
     }
 
+    private float curTime;
+    public float coolTime = 0.5f;
+    public Transform pos;
+    public Vector2 boxSize;
+
     void Update()
     {
         //움직이기
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
-
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(horizontalInput, verticalInput);
         rb.velocity = movement * moveSpeed;
 
@@ -50,9 +54,22 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;
         }
 
-        if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼을 누를 때
+        if (curTime <= 0) // 마우스 왼쪽 버튼을 누를 때
         {
-            Attack();
+            if (Input.GetMouseButtonDown(0))
+            {
+                Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
+                foreach (Collider2D collider in collider2Ds)
+                {
+                    Debug.Log(collider.tag);
+                }
+                animator.SetTrigger("Attack");
+                curTime = coolTime;
+            }
+        }
+        else
+        {
+            curTime -= Time.deltaTime;
         }
 
     }
@@ -74,5 +91,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log("포탈");
             loader.isExitPortal();
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(pos.position, boxSize);
     }
 }

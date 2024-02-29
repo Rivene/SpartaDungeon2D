@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 
-public class TopDownAnimationController : TopDownAnimations
+public class TopDownPlayerAnimationController : TopDownAnimations
 {
-    private static readonly int IsWalking = Animator.StringToHash("IsWalking");
+    private static readonly int isMove = Animator.StringToHash("isMove");
     private static readonly int Attack = Animator.StringToHash("Attack");
     private static readonly int IsHit = Animator.StringToHash("IsHit");
+    private static readonly int Death = Animator.StringToHash("Death");
 
     private HealthSystem _healthSystem;
 
@@ -24,14 +24,14 @@ public class TopDownAnimationController : TopDownAnimations
 
         if (_healthSystem != null)
         {
-            _healthSystem.OnDamage += Hit;
-            _healthSystem.OnInvincibilityEnd += InvincibilityEnd;
+            //_healthSystem.OnDamage += Hit;
+            //_healthSystem.OnInvincibilityEnd += InvincibilityEnd;
         }
     }
 
     private void Move(Vector2 obj)
     {
-        animator.SetBool(IsWalking, obj.magnitude > .5f);
+        animator.SetBool(isMove, obj.magnitude > .5f);
     }
 
     private void Attacking(AttackSO obj)
@@ -39,13 +39,18 @@ public class TopDownAnimationController : TopDownAnimations
         animator.SetTrigger(Attack);
     }
 
-    private void Hit()
-    {
-        animator.SetBool(IsHit, true);
-    }
+    //private void hit()
+    //{
+    //    animator.setbool(ishit, true);
+    //}
 
-    private void InvincibilityEnd()
+    //private void invincibilityend()
+    //{
+    //    animator.setbool(ishit, false);
+    //}
+
+    private void isDeath()
     {
-        animator.SetBool(IsHit, false);
+        animator.SetBool(Death, true);
     }
 }

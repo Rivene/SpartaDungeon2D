@@ -20,7 +20,7 @@ public class ProjectileManager : MonoBehaviour
         objectPool = GetComponent<ObjectPool>();
     }
 
-    public void ShootBullet(Vector2 startPostiion, Vector2 direction, _RangedAttackData attackData)
+    public void ShootBullet(Vector2 startPostiion, Vector2 direction, RangedAttackData attackData)
     {
         GameObject obj = objectPool.SpawnFromPool(attackData.bulletNameTag);
 
@@ -30,5 +30,4 @@ public class ProjectileManager : MonoBehaviour
 
         obj.SetActive(true);
     }
-
 }

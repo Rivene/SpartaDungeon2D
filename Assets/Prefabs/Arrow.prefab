@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2252761014132394588}
   - component: {fileID: -4069895974465336701}
   - component: {fileID: 7751521434935111736}
-  - component: {fileID: -5329712949710339884}
+  - component: {fileID: 7069859265048617589}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -118,7 +118,7 @@ Transform:
   m_Children:
   - {fileID: 3320545504063120548}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2252761014132394588
 BoxCollider2D:
@@ -305,7 +305,7 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 0
---- !u!114 &-5329712949710339884
+--- !u!114 &7069859265048617589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,10 +314,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3416984008359708408}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02543156c07ceae4ca5ad9b4bf475765, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b9d7fc10df977a48b8bfaa50cf0c50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   levelCollisionLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 512
   fxOnDestory: 1

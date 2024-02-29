@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TopDownRangeEnemyContreoller : TopDownEnemyController
+public class TopDownRangeEnemyController : TopDownEnemyController
 {
     [SerializeField] private float followRange = 15f;
     [SerializeField] private float shootRange = 10f;
@@ -11,13 +11,13 @@ public class TopDownRangeEnemyContreoller : TopDownEnemyController
     {
         base.FixedUpdate();
 
-        float distance = DistanceToTarget();
+        float distance = DistanceTotarget();
         Vector2 direction = DirectionToTarget();
 
         IsAttacking = false;
-        if (distance <= followRange)
+        if (distance < followRange)
         {
-            if (distance <= shootRange)
+            if (distance < shootRange)
             {
                 int layerMaskTarget = Stats.CurrentStates.attackSO.target;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 11f, (1 << LayerMask.NameToLayer("Level")) | layerMaskTarget);
@@ -28,19 +28,11 @@ public class TopDownRangeEnemyContreoller : TopDownEnemyController
                     CallMoveEvent(Vector2.zero);
                     IsAttacking = true;
                 }
-                else
-                {
-                    CallMoveEvent(direction);
-                }
             }
             else
             {
                 CallMoveEvent(direction);
             }
-        }
-        else
-        {
-            CallMoveEvent(direction);
         }
     }
 }

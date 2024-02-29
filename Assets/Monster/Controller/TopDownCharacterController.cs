@@ -1,23 +1,23 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
-
 
 public class TopDownCharacterController : MonoBehaviour
 {
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
-    public event Action<_AttackSO> OnAttackEvent;
+    public event Action<AttackSO> OnAttackEvent;
 
     private float _timeSinceLastAttack = float.MaxValue;
     protected bool IsAttacking { get; set; }
 
-    protected _CharacterStatsHandler Stats { get; private set; }
+    protected CharacterStatsHandler Stats { get; private set; }
 
     protected virtual void Awake()
     {
-        Stats = GetComponent<_CharacterStatsHandler>();
+        Stats = GetComponent<CharacterStatsHandler>();
     }
 
     protected virtual void Update()
@@ -52,7 +52,7 @@ public class TopDownCharacterController : MonoBehaviour
         OnLookEvent?.Invoke(direction);
     }
 
-    public void CallAttackEvent(_AttackSO attackSO)
+    public void CallAttackEvent(AttackSO attackSO)
     {
         OnAttackEvent?.Invoke(attackSO);
     }

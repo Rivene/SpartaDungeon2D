@@ -18,7 +18,7 @@ public class Inventory : MonoBehaviour
         slots = slotsGridUi.GetComponentsInChildren<Slot>(); // 부모 밑 slot
     }
 
-    
+
     void Update()
     {
         KeyOpenInventroy();
@@ -30,12 +30,12 @@ public class Inventory : MonoBehaviour
         {
             activated = !activated;
 
-            if(activated) // true면 인벤토리 열림
-            {               
+            if (activated) // true면 인벤토리 열림
+            {
                 OpenInventory();
             }
             else
-            {               
+            {
                 CloseInventory();
             }
         }
@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
 
     private void OpenInventory()
     {
-        
+
         inventoryUi.SetActive(true);
     }
 
@@ -54,7 +54,7 @@ public class Inventory : MonoBehaviour
 
     public void AquireItem(Item _item, int count = 1)
     {
-        for(int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item != null)
             {
@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        for(int i=0; i < slots.Length;i++)
+        for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item == null) // 없다면 빈슬롯에 아이템 추가
             {

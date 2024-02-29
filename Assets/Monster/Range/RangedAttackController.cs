@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +6,7 @@ public class RangedAttackController : MonoBehaviour
 {
     [SerializeField] private LayerMask levelCollisionLayer;
 
-    private _RangedAttackData _attackData;
+    private RangedAttackData _attackData;
     private float _currentDuration;
     private Vector2 _direction;
     private bool _isReady;
@@ -33,7 +32,7 @@ public class RangedAttackController : MonoBehaviour
             return;
         }
 
-        _currentDuration += Time.deltaTime;
+        _currentDuration = Time.deltaTime;
 
         if (_currentDuration > _attackData.duration)
         {
@@ -49,10 +48,26 @@ public class RangedAttackController : MonoBehaviour
         {
             DestroyProjectile(collision.ClosestPoint(transform.position) - _direction * .2f, fxOnDestory);
         }
+        else if (_attackData.target.value == (_attackData.target.value | (1 << collision.gameObject.layer)))
+        {
+            HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
+            if (healthSystem != null)
+            {
+                healthSystem.ChangeHealth(-_attackData.power);
+                if (_attackData.isOnKnockback)
+                {
+                    TopDownMovement movement = collision.GetComponent<TopDownMovement>();
+                    if (movement != null)
+                    {
+                        movement.ApplyKnockback(transform, _attackData.knockbackPower, _attackData.knockbackTime);
+                    }
+                }
+            }
+            DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestory);
+        }
     }
 
-
-    public void InitializeAttack(Vector2 direction, _RangedAttackData attackData, ProjectileManager projectileManager)
+    public void InitializeAttack(Vector2 direction, RangedAttackData attackData, ProjectileManager projectileManager)
     {
         _projectileManager = projectileManager;
         _attackData = attackData;
@@ -73,12 +88,8 @@ public class RangedAttackController : MonoBehaviour
         transform.localScale = Vector3.one * _attackData.size;
     }
 
-    private void DestroyProjectile(Vector3 position, bool createFx)
+    private void DestroyProjectile(Vector3 position, bool creatFx)
     {
-        if (createFx)
-        {
-
-        }
         gameObject.SetActive(false);
     }
 }
