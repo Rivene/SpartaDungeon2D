@@ -26,11 +26,25 @@ public class TopDownEnemyController : TopDownCharacterController
 
     protected float DistanceTotarget()
     {
-        return Vector3.Distance(transform.position, ClosestTarget.position);
+        if (ClosestTarget != null)
+        {
+            return Vector3.Distance(transform.position, ClosestTarget.position);
+        }
+        else
+        {
+            return float.MaxValue; // 또는 적절한 값으로 초기화
+        }
     }
 
     protected Vector2 DirectionToTarget()
     {
-        return (ClosestTarget.position - transform.position).normalized;
+        if (ClosestTarget != null)
+        {
+            return (ClosestTarget.position - transform.position).normalized;
+        }
+        else
+        {
+            return Vector2.zero; // 또는 적절한 값으로 초기화
+        }
     }
 }
