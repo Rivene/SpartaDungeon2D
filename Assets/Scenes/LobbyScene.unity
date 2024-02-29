@@ -1730,7 +1730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   coolTime: 0.5
-  pos: {fileID: 0}
+  pos: {fileID: 1521344403}
   boxSize: {x: 0, y: 0}
 --- !u!114 &1521344409
 MonoBehaviour:
