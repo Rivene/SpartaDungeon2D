@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5343451701799146536}
   - component: {fileID: 7387705790033777417}
   - component: {fileID: 6537508884579376761}
-  - component: {fileID: -6608097769457747655}
   m_Layer: 9
   m_Name: flask_big_blue
   m_TagString: Untagged
@@ -33,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5343451701799146536
 SpriteRenderer:
@@ -145,16 +144,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 1d6373d1aaee9954ead3c8ec0818e7f2, type: 2}
---- !u!114 &-6608097769457747655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7798781801937583426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f24859bde8e6994eb270bd1f75a2d78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackValue: 1

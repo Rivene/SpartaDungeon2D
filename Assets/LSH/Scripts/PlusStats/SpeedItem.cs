@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedItem : MonoBehaviour
+[Serializable]
+public class SpeedItem
 {
     [SerializeField] float speedValue = 2f;
     [SerializeField] private PlayerController playerController;
@@ -10,7 +12,7 @@ public class SpeedItem : MonoBehaviour
 
     private void Awake()
     {
-       playerController = FindObjectOfType<PlayerController>();
+       playerController = GameManager.instance.Player.GetComponent<PlayerController>();
     }
     public void UseSpeed(CharacterStatsHandler statsHandler)
     {

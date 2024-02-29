@@ -1,16 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackItem : MonoBehaviour
+[Serializable]
+public class AttackItem
 {
     [SerializeField] private float attackValue = 1f;
+    public AttackSO attackSO;
 
-    public void UseAttack(AttackSO attackSO)
+    public void UseAttack()
     {
-        attackSO = FindObjectOfType<AttackSO>();
-        attackSO.power += attackValue;
-        Debug.Log("공격력 : " + attackSO.power);
+        
+        if (attackSO != null)
+        {
+            attackSO.power += attackValue;
+            Debug.Log("공격력 : " + attackSO.power);
+        }
 
     }
 }
