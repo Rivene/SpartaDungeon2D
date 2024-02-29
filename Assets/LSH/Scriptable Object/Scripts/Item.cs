@@ -21,6 +21,11 @@ public class Item : ScriptableObject
     [Header("Stacking")]
     public int maxAmount;
 
+    [Header("Stats")]
+    public int healup;
+    public int speedup;
+    public int powerup;
+    
     [Header("Type")]
     public ItemType type;
 

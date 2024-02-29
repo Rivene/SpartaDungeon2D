@@ -16,4 +16,7 @@ MonoBehaviour:
   discription: "\uCD94\uAC00\uACF5\uACA9\uB825"
   icon: {fileID: 21300000, guid: 9f0cce5df22c7f546a25708c45e60883, type: 3}
   maxAmount: 5
+  healup: 0
+  speedup: 0
+  powerup: 1
   type: 2

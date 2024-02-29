@@ -10,11 +10,11 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public Item item;
     public int itemCount;
     public Image itemImage;
+    
 
     [SerializeField] private TextMeshProUGUI countText;
 
     private CharacterStatsHandler statsHandler;
-
 
 
     public void Start()
@@ -56,21 +56,18 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         {
             if (item != null)
             {
-                Debug.Log("아이템 사용");
-                //스탯변화
-
                 switch (item.type)
                 {
                     case ItemType.Heal:
-                        ItemDataManager.I.HealUP(statsHandler);
+                        ItemDataManager.I.HealUP(statsHandler, item);
                         break;
 
                     case ItemType.Speed:
-                        //speed.UseSpeed(statsHandler);
+                        ItemDataManager.I.SpeedUP(statsHandler,item);
                         break;
 
                     case ItemType.Attack:
-                        ItemDataManager.I.AttackUP();
+                        ItemDataManager.I.AttackUP(item);
                         break;
                 }
 

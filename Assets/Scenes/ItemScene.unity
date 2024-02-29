@@ -1982,14 +1982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a0c4c4715b69f4080151a2779dcfc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackItem:
-    attackValue: 1
-    attackSO: {fileID: 11400000, guid: 31b3ab57607e59d41ace501cbf8232d9, type: 2}
-  healItem:
-    healValue: 5
-  speedItem:
-    speedValue: 2
-    playerController: {fileID: 103263583}
+  attackSO: {fileID: 11400000, guid: 31b3ab57607e59d41ace501cbf8232d9, type: 2}
+  playerController: {fileID: 0}
 --- !u!4 &1649311806
 Transform:
   m_ObjectHideFlags: 0
