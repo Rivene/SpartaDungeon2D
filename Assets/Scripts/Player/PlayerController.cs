@@ -64,9 +64,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.name == "DungeonPortal" && loader != null)
+        if (coll.gameObject.tag == "DungeonPortal")
         {
+            Debug.Log("Æ÷Å»");
             loader.isDungeonPortal();
+        }
+        else if(coll.gameObject.tag == "ExitPortal")
+        {
+            Debug.Log("Æ÷Å»");
+            loader.isExitPortal();
         }
     }
 }
