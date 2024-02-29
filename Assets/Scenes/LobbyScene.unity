@@ -262,7 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed7ed05e6a3379409998442ea121bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1521344401}
 --- !u!4 &853869251
 Transform:
   m_ObjectHideFlags: 0
@@ -1353,7 +1352,7 @@ GameObject:
   - component: {fileID: 1483877597}
   m_Layer: 0
   m_Name: DungeonPortal
-  m_TagString: DungeonPortal
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

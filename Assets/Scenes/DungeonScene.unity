@@ -4400,7 +4400,7 @@ GameObject:
   - component: {fileID: 1762082624}
   m_Layer: 0
   m_Name: ExitPortal
-  m_TagString: ExitPortal
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4552,7 +4552,7 @@ GameObject:
   - component: {fileID: 1784680402}
   m_Layer: 0
   m_Name: DungeonPortal
-  m_TagString: DungeonPortal
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
