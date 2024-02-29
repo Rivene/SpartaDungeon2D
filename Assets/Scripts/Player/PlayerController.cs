@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.PlayerSettings;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         loader = FindObjectOfType<SceneLoader>();
     }
+
+    private float curTime;
+    public float coolTime = 0.5f;
+    public Transform pos;
+    public Vector2 boxSize;
 
     void Update()
     {
@@ -48,9 +54,22 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;
         }
 
-        if (Input.GetMouseButtonDown(0)) // 마우스 왼쪽 버튼을 누를 때
+        if (curTime <= 0) // 마우스 왼쪽 버튼을 누를 때
         {
-            Attack();
+            if (Input.GetMouseButtonDown(0))
+            {
+                Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
+                foreach (Collider2D collider in collider2Ds)
+                {
+                    Debug.Log(collider.tag);
+                }
+                animator.SetTrigger("Attack");
+                curTime = coolTime;
+            }
+        }
+        else
+        {
+            curTime -= Time.deltaTime;
         }
 
     }
@@ -66,5 +85,11 @@ public class PlayerController : MonoBehaviour
         {
             loader.isDungeonPortal();
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(pos.position, boxSize);
     }
 }
