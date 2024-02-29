@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,12 +9,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private SceneLoader loader;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        loader = FindObjectOfType<SceneLoader>();
     }
 
     void Update()
@@ -55,5 +58,13 @@ public class PlayerController : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
+    }
+
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.name == "DungeonPortal" && loader != null)
+        {
+            loader.isDungeonPortal();
+        }
     }
 }
