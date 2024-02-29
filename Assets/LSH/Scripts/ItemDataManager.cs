@@ -14,7 +14,7 @@ public class ItemDataManager : MonoBehaviour
     private void Awake()
     {
         I = this;
-        playerController = GameManager.instance.Player.GetComponent<PlayerController>();
+        playerController = GameManager.instance.Player.GetComponent<PlayerController>(); // 플레이어의 PlayerController 가져오기
     }
 
     public void AttackUP(Item item)
