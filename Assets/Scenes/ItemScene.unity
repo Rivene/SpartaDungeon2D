@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flask_big_yellow
       objectReference: {fileID: 0}
+    - target: {fileID: 4283641418436220933, guid: 11a3219663d2df04e92ded7c7a2f898b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -313,7 +317,7 @@ GameObject:
   - component: {fileID: 103263583}
   - component: {fileID: 103263582}
   - component: {fileID: 103263581}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -617,6 +621,10 @@ PrefabInstance:
     - target: {fileID: 5650480522648048065, guid: 2b847433d39695f4a9456da3ff24d625, type: 3}
       propertyPath: m_Name
       value: flask_big_red
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650480522648048065, guid: 2b847433d39695f4a9456da3ff24d625, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1629,6 +1637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flask_big_blue
       objectReference: {fileID: 0}
+    - target: {fileID: 7798781801937583426, guid: bc3dd7ac276507741a0cae48ca3c0a3a, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2273,7 +2285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2096921001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
