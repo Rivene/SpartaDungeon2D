@@ -14,20 +14,13 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI countText;
 
     private CharacterStatsHandler statsHandler;
-    private HealItem heal;
-    private SpeedItem speed;
-    private AttackItem attack;
-    private AttackSO attackSO;
 
-    private void Start()
+
+
+    public void Start()
     {
         statsHandler = FindObjectOfType<CharacterStatsHandler>();
-        heal = FindObjectOfType<HealItem>();
-        speed = FindObjectOfType<SpeedItem>();
-        attack = FindObjectOfType<AttackItem>();
-        attackSO = FindObjectOfType<AttackSO>();
     }
-
     public void AddItem(Item _item, int count = 1)
     {
         item = _item;
@@ -69,15 +62,15 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                 switch (item.type)
                 {
                     case ItemType.Heal:
-                        heal.UseHeal(statsHandler);
+                        ItemDataManager.I.HealUP(statsHandler);
                         break;
 
                     case ItemType.Speed:
-                        speed.UseSpeed(statsHandler);
+                        //speed.UseSpeed(statsHandler);
                         break;
 
                     case ItemType.Attack:
-                        attack.UseAttack(attackSO);
+                        ItemDataManager.I.AttackUP();
                         break;
                 }
 

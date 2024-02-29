@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2787093794571444715}
   - component: {fileID: 873071333095816202}
   - component: {fileID: -3458968879961348562}
-  - component: {fileID: -8735799205774238486}
   m_Layer: 9
   m_Name: flask_big_red
   m_TagString: Untagged
@@ -145,16 +144,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f604fd4809ead50409b0bb49b7064aee, type: 2}
---- !u!114 &-8735799205774238486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5650480522648048065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda8743f3e10b4740bedebdded6d8186, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healValue: 10
