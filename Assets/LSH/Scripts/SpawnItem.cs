@@ -12,11 +12,9 @@ public class SpawnItem : MonoBehaviour
 
     private void Start()
     {
-        monsterPosition = transform.position;
-        ItemRandom();
         Debug.Log(monsterPosition);
     }
-    private void ItemRandom()
+    public void ItemRandom(Vector3 position)
     {
         int spawnChance = Random.Range(0, 2);//아이템 생성할지 말지 랜덤
 
@@ -27,15 +25,15 @@ public class SpawnItem : MonoBehaviour
 
             if (randomNum == 0)
             {
-                Instantiate(plusHp, monsterPosition, rotation);
+                Instantiate(plusHp, position, rotation);
             }
             else if (randomNum == 1)
             {
-                Instantiate(plusSpeed, monsterPosition, rotation);
+                Instantiate(plusSpeed, position, rotation);
             }
             else
             {
-                Instantiate(plusPower, monsterPosition, rotation);
+                Instantiate(plusPower, position, rotation);
             }
         }
 

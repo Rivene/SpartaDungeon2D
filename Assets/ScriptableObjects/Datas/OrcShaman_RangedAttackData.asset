@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 0.5
   delay: 1
-  power: 2
+  power: 1
   speed: 10
   target:
     serializedVersion: 2
-    m_Bits: 128
-  isOnKnockback: 0
+    m_Bits: 256
+  isOnKnockback: 1
   knockbackPower: 5
-  knockbackTime: 0
+  knockbackTime: 0.1
   bulletNameTag: Arrow
   duration: 5
-  spread: 4
+  spread: 8
   numberofProjectilesPerShot: 1
   multipleProjectilesAngel: 7
   projectileColor: {r: 1, g: 0, b: 0.27058825, a: 0}
