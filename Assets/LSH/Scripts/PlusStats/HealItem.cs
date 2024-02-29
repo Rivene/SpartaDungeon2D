@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealItem : MonoBehaviour
 {
-    [SerializeField] int healValue = 10;
+    [SerializeField] int healValue = 5;
     private HealthSystem healthSystem;
 
     public void UseHeal(CharacterStatsHandler statsHandler)

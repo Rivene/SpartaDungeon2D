@@ -8,6 +8,7 @@ public class AttackItem : MonoBehaviour
 
     public void UseAttack(AttackSO attackSO)
     {
+        attackSO = FindObjectOfType<AttackSO>();
         attackSO.power += attackValue;
         Debug.Log("°ø°Ý·Â : " + attackSO.power);
 

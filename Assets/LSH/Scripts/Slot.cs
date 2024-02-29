@@ -66,8 +66,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                 Debug.Log("아이템 사용");
                 //스탯변화
 
-                heal.UseHeal(statsHandler);
-
                 switch (item.type)
                 {
                     case ItemType.Heal:
