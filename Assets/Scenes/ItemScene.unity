@@ -247,8 +247,6 @@ GameObject:
   - component: {fileID: 103263583}
   - component: {fileID: 103263582}
   - component: {fileID: 103263581}
-  - component: {fileID: 103263591}
-  - component: {fileID: 103263592}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -498,48 +496,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &103263591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103263580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &103263592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103263580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d66c966f85545ac43b7ab1d2dbc39c5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &304053408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,7 +1240,7 @@ PrefabInstance:
     - target: {fileID: -1754412399578165755, guid: 11a3219663d2df04e92ded7c7a2f898b, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 103263583}
     - target: {fileID: 3900668246765026456, guid: 11a3219663d2df04e92ded7c7a2f898b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2257,7 +2213,7 @@ PrefabInstance:
     - target: {fileID: -1754412399578165755, guid: 11a3219663d2df04e92ded7c7a2f898b, type: 3}
       propertyPath: playerController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 103263583}
     - target: {fileID: 3900668246765026456, guid: 11a3219663d2df04e92ded7c7a2f898b, type: 3}
       propertyPath: m_RootOrder
       value: 6
