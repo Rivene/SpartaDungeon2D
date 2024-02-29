@@ -8,7 +8,19 @@ public class SceneLoader : MonoBehaviour
 
     public void isDungeonPortal()
     {
-        SceneManager.LoadScene("TestMoveScene"); // 던전씬으로 변경 << 씬이름은 변경
+        if(SceneManager.GetActiveScene().name == "LobbyScene")
+        {
+            SceneManager.LoadScene("DungeonScene"); //던전씬
+        }
+        else
+        {
+            SceneManager.LoadScene("LobbyScene"); //로비씬
+        }
+    }
+
+    public void isExitPortal()
+    {
+        SceneManager.LoadScene("LobbyScene"); //로비씬
     }
 
     public void isStartBtn()
