@@ -352,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickup:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 512
   pickupText: {fileID: 375028278}
 --- !u!114 &103263583
 MonoBehaviour:
