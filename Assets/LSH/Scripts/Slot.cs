@@ -10,6 +10,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public Item item;
     public int itemCount;
     public Image itemImage;
+    private HealthSystem healthSystem;
     
 
     [SerializeField] private TextMeshProUGUI countText;
@@ -20,6 +21,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public void Start()
     {
         statsHandler = FindObjectOfType<CharacterStatsHandler>();
+        healthSystem = FindObjectOfType<HealthSystem>();
     }
     public void AddItem(Item _item, int count = 1)
     {
@@ -59,7 +61,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                 switch (item.type)
                 {
                     case ItemType.Heal:
-                        ItemDataManager.I.HealUP(statsHandler, item);
+                        ItemDataManager.I.HealUP(healthSystem,item);
                         break;
 
                     case ItemType.Speed:

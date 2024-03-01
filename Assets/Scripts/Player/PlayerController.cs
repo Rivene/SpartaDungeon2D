@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private SceneLoader loader;
+    private CharacterStatsHandler statsHandler;
+    public AttackSO attackSO;
 
     void Start()
     {
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         loader = FindObjectOfType<SceneLoader>();
+        statsHandler = GetComponent<CharacterStatsHandler>();
     }
 
     private float curTime;
