@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\uCCB4\uB825"
   discription: "\uCCB4\uB825\uD68C\uBCF5"
-  icon: {fileID: 21300000, guid: 1e0424c5424c1c64ebec05ca0e5ebea3, type: 3}
+  icon: {fileID: 21300000, guid: 682a707e72567b94693171101e57c238, type: 3}
   maxAmount: 5
-  plusHp: 5
-  plusSpeed: 0
-  plusAttack: 0
+  healup: 5
+  speedup: 0
+  powerup: 0
+  type: 0
