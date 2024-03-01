@@ -33,10 +33,12 @@ public class Inventory : MonoBehaviour
             if (activated) // true면 인벤토리 열림
             {
                 OpenInventory();
+                Time.timeScale = 0f;
             }
             else
             {
                 CloseInventory();
+                Time.timeScale = 1f;
             }
         }
     }
