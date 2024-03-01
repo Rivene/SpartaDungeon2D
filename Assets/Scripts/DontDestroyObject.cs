@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class DontDestroyObject: MonoBehaviour
 {
+    private static DontDestroyObject instance = null;
     private void Awake()
     {
-        var obj = FindObjectsOfType<DontDestroyObject>();
-        if (obj.Length == 1)
+        if(instance)
         {
-            DontDestroyOnLoad(gameObject);
+            DestroyImmediate(this.gameObject);
+            return;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+        //var obj = FindObjectsOfType<DontDestroyObject>();
+        //if (obj.Length == 1)
+        //{
+        //    DontDestroyOnLoad(gameObject);
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 }
