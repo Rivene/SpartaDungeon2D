@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private SceneLoader loader;
 
+    private RangedAttackData _attackData;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -61,7 +63,23 @@ public class PlayerController : MonoBehaviour
                 Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
                 foreach (Collider2D collider in collider2Ds)
                 {
-                    Debug.Log(collider.tag);
+                    //Debug.Log(collider.tag);
+                    if (collider.tag == "Enemy")
+                    {
+                        HealthSystem healthSystem = collider.GetComponent<HealthSystem>();
+                        if (healthSystem != null)
+                        {
+                            healthSystem.ChangeHealth(-1f);
+                            //if (_attackData.isOnKnockback)
+                            //{
+                            //    TopDownMovement _movement = collider.GetComponent<TopDownMovement>();
+                            //    if (_movement != null)
+                            //    {
+                            //        _movement.ApplyKnockback(transform, _attackData.knockbackPower, _attackData.knockbackTime);
+                            //    }
+                            //}
+                        }
+                    }
                 }
                 animator.SetTrigger("Attack");
                 curTime = coolTime;

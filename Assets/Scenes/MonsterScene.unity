@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 93229274}
   - component: {fileID: 93229273}
   - component: {fileID: 93229272}
+  - component: {fileID: 93229280}
   m_Layer: 6
   m_Name: OrcShaman
   m_TagString: Enemy
@@ -627,6 +628,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663767fc210c0604a996c3506a63b270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &93229280
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93229262}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1001 &188006115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1347,11 +1383,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3418046574480823204, guid: bc3dd7ac276507741a0cae48ca3c0a3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.86
+      value: -7.11
       objectReference: {fileID: 0}
     - target: {fileID: 3418046574480823204, guid: bc3dd7ac276507741a0cae48ca3c0a3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.81
+      value: 3.58
       objectReference: {fileID: 0}
     - target: {fileID: 3418046574480823204, guid: bc3dd7ac276507741a0cae48ca3c0a3a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2573,11 +2609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119098701339709200, guid: 2b847433d39695f4a9456da3ff24d625, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.87
+      value: -2.15
       objectReference: {fileID: 0}
     - target: {fileID: 5119098701339709200, guid: 2b847433d39695f4a9456da3ff24d625, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.18
+      value: 3.52
       objectReference: {fileID: 0}
     - target: {fileID: 5119098701339709200, guid: 2b847433d39695f4a9456da3ff24d625, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2942,11 +2978,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119098701339709200, guid: 2b847433d39695f4a9456da3ff24d625, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.87
+      value: -5.47
       objectReference: {fileID: 0}
     - target: {fileID: 5119098701339709200, guid: 2b847433d39695f4a9456da3ff24d625, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.62
+      value: 3.58
       objectReference: {fileID: 0}
     - target: {fileID: 5119098701339709200, guid: 2b847433d39695f4a9456da3ff24d625, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3305,7 +3341,7 @@ MonoBehaviour:
     statsChangeType: 2
     maxHealth: 10
     speed: 5
-    attackSO: {fileID: 11400000, guid: 31b3ab57607e59d41ace501cbf8232d9, type: 2}
+    attackSO: {fileID: 11400000, guid: cb2fe0077c321c945a5533afcc095180, type: 2}
   statsModifiers:
   - statsChangeType: 0
     maxHealth: 0
@@ -3518,7 +3554,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543753262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0.68, y: -0.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
