@@ -26,11 +26,12 @@ public class ItemDataManager : MonoBehaviour
     
     public void HealUP(HealthSystem healthSystem, Item item)
     {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        healthSystem = playerObject.GetComponent<HealthSystem>();
         //healItem.UseHeal(statsHandler);
         healthSystem.ChangeHealth(item.healup);
         healthSystem.CurrentHealth = Mathf.Clamp(healthSystem.CurrentHealth, 0, healthSystem.MaxHealth);
         Debug.Log("Ã¼·Â : " + healthSystem.CurrentHealth);
-        GameManager.instance.HpUpdateUI();
     }
 
     public void SpeedUP(CharacterStatsHandler statsHandler,Item item)
