@@ -58,10 +58,6 @@ public class HealthSystem : MonoBehaviour
         {
             OnHeal?.Invoke();
         }
-        else
-        {
-            OnDamage?.Invoke();
-        }
 
         if (CurrentHealth <= 0f)
         {
@@ -74,10 +70,5 @@ public class HealthSystem : MonoBehaviour
     private void CallDeath()
     {
         OnDeath?.Invoke();
-    }
-
-    public void TakeDamage(float damage)
-    {
-        ChangeHealth(-damage);
     }
 }

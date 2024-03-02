@@ -37,6 +37,7 @@ public class CharacterStatsHandler : MonoBehaviour
         UpdateCharacterStats();
     }
 
+
     private void UpdateCharacterStats()
     {
         AttackSO attackSO = null;
@@ -109,6 +110,7 @@ public class CharacterStatsHandler : MonoBehaviour
         currentAttack.size = operation(currentAttack.size, newAttack.size);
         currentAttack.speed = operation(currentAttack.speed, newAttack.speed);
     }
+
 
     private void ApplyRangedStats(Func<float, float, float> operation, CharacterStats newModifier)
     {

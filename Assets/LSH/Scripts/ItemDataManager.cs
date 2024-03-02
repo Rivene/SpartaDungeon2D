@@ -7,14 +7,14 @@ public class ItemDataManager : MonoBehaviour
     public static ItemDataManager I;
 
     public AttackSO attackSO;
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private TopDownCharacterController playerController;
 
     private Item item;
 
     private void Awake()
     {
         I = this;
-        playerController = GameManager.instance.Player.GetComponent<PlayerController>(); // 플레이어의 PlayerController 가져오기
+        playerController = GameManager.instance.Player.GetComponent<TopDownCharacterController>(); // 플레이어의 PlayerController 가져오기
     }
 
     public void AttackUP(Item item)

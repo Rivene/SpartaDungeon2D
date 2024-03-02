@@ -11,6 +11,8 @@ public class TopDownCharacterController : MonoBehaviour
     public event Action<AttackSO> OnAttackEvent;
 
     private float _timeSinceLastAttack = float.MaxValue;
+    internal float moveSpeed;
+
     protected bool IsAttacking { get; set; }
 
     protected CharacterStatsHandler Stats { get; private set; }
