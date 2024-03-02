@@ -7,27 +7,16 @@ public class TopDownEnemyController : TopDownCharacterController
     GameManager gameManager;
 
     protected Transform ClosestTarget { get; private set; }
-    public static GameManager instance;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (GameManager.instance == null)
-        {
-            GameManager.instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        base.Awake();
     }
 
     protected virtual void Start()
     {
-        gameManager = GameManager.instance;
-        if (gameManager != null)
-        {
-            ClosestTarget = gameManager.Player;
-        }
+        gameManager = GameManager.Instance;
+        ClosestTarget = gameManager.Player;
     }
 
     protected virtual void FixedUpdate()
@@ -37,25 +26,11 @@ public class TopDownEnemyController : TopDownCharacterController
 
     protected float DistanceTotarget()
     {
-        if (ClosestTarget != null)
-        {
-            return Vector3.Distance(transform.position, ClosestTarget.position);
-        }
-        else
-        {
-            return float.MaxValue; // 또는 적절한 값으로 초기화
-        }
+        return Vector3.Distance(transform.position, ClosestTarget.position);
     }
 
     protected Vector2 DirectionToTarget()
     {
-        if (ClosestTarget != null)
-        {
-            return (ClosestTarget.position - transform.position).normalized;
-        }
-        else
-        {
-            return Vector2.zero; // 또는 적절한 값으로 초기화
-        }
+        return (ClosestTarget.position - transform.position).normalized;
     }
 }
