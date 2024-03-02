@@ -704,7 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   waveText: {fileID: 0}
-  hpGaugeSlider: {fileID: 0}
+  hpGaugeSlider: {fileID: 2100439760}
   gameOverUI: {fileID: 145733843}
   currentWaveIndex: 0
   spawnInterval: 0.5
@@ -723,6 +723,7 @@ MonoBehaviour:
     maxHealth: 0
     speed: 0
     attackSO: {fileID: 0}
+  playerHpSlider: {fileID: 0}
 --- !u!4 &245081554
 Transform:
   m_ObjectHideFlags: 0
