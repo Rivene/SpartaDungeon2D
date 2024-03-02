@@ -723,7 +723,6 @@ MonoBehaviour:
     maxHealth: 0
     speed: 0
     attackSO: {fileID: 0}
-  playerHpSlider: {fileID: 0}
 --- !u!4 &245081554
 Transform:
   m_ObjectHideFlags: 0
