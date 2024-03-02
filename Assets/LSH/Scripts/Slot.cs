@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,17 +10,17 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 {
     public Item item;
     public int itemCount;
-    public Image itemImage;
-    
-
+    public Image itemImage;  
     [SerializeField] private TextMeshProUGUI countText;
 
     private CharacterStatsHandler statsHandler;
+    private HealthSystem healthSystem;
 
 
     public void Start()
     {
         statsHandler = FindObjectOfType<CharacterStatsHandler>();
+        healthSystem = FindObjectOfType<HealthSystem>();
     }
     public void AddItem(Item _item, int count = 1)
     {
@@ -59,7 +60,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                 switch (item.type)
                 {
                     case ItemType.Heal:
-                        ItemDataManager.I.HealUP(statsHandler, item);
+                        ItemDataManager.I.HealUP(healthSystem,item);
                         break;
 
                     case ItemType.Speed:
@@ -75,6 +76,19 @@ public class Slot : MonoBehaviour, IPointerClickHandler
             }
         }
 
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (item != null)
+        {
+            ItemDataManager.I.ShowToolTip(transform.position, item);
+        }
+    }
+    
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        ItemDataManager.I.HideToolTip();
     }
 
 }

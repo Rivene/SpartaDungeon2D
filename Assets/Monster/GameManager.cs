@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -33,22 +32,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CharacterStats defaultStats;
     [SerializeField] private CharacterStats rangedStats;
 
+    [SerializeField] private Slider playerHpSlider;
+    private CharacterStatsHandler characterStatsHandler;
+    private HealthSystem healthSystem;
+
     private void Awake()
     {
         Instance = this;
         Player = GameObject.FindGameObjectWithTag(playerTag).transform;
+        healthSystem = Player.GetComponent<HealthSystem>();
+        characterStatsHandler = Player.GetComponent<CharacterStatsHandler>();
+        healthSystem.OnDamage += HpUpdateUI;
+        healthSystem.OnHeal += HpUpdateUI;
+    }
 
-        playerHealthSystem = Player.GetComponent<HealthSystem>();
-        playerHealthSystem.OnDamage += UpdateHealthUI;
-        playerHealthSystem.OnHeal += UpdateHealthUI;
-        playerHealthSystem.OnDeath += GameOver;
-
-        gameOverUI.SetActive(false);
-
-        for (int i = 0; i < spawnPositionsRoot.childCount; i++)
-        {
-            spawnPostions.Add(spawnPositionsRoot.GetChild(i));
-        }
+    public void HpUpdateUI() // 플레이어 체력바
+    {
+        playerHpSlider.value = healthSystem.CurrentHealth / healthSystem.MaxHealth;
     }
 
     private void Start()

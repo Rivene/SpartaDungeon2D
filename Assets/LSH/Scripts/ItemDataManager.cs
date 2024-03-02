@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,32 +10,45 @@ public class ItemDataManager : MonoBehaviour
     [SerializeField] private TopDownCharacterController playerController;
 
     private Item item;
+    [SerializeField] private ToolTip slotToolTip;
 
     private void Awake()
     {
         I = this;
-       // playerController = GameManager.instance.Player.GetComponent<TopDownCharacterController>(); // ÇÃ·¹ÀÌ¾îÀÇ PlayerController °¡Á®¿À±â
+       // playerController = GameManager.instance.Player.GetComponent<TopDownCharacterController>(); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ PlayerController ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     }
 
     public void AttackUP(Item item)
     {
         //attackItem.UseAttack();
         attackSO.power += item.powerup;
-        Debug.Log("°ø°İ·Â : " + attackSO.power);
+        Debug.Log("ê³µê²©ë ¥ : " + attackSO.power);
     }
     
-    public void HealUP(CharacterStatsHandler statsHandler, Item item)
+    public void HealUP(HealthSystem healthSystem, Item item)
     {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        healthSystem = playerObject.GetComponent<HealthSystem>();
         //healItem.UseHeal(statsHandler);
-        statsHandler.CurrentStates.maxHealth += item.healup;
-        Debug.Log("Ã¼·Â : " + statsHandler.CurrentStates.maxHealth);
+        healthSystem.ChangeHealth(item.healup);
+        healthSystem.CurrentHealth = Mathf.Clamp(healthSystem.CurrentHealth, 0, healthSystem.MaxHealth);
+        Debug.Log("ì²´ë ¥ : " + healthSystem.CurrentHealth);
     }
 
     public void SpeedUP(CharacterStatsHandler statsHandler,Item item)
     {
         playerController.moveSpeed += item.speedup;
         statsHandler.CurrentStates.speed = playerController.moveSpeed;
-        Debug.Log("ÀÌµ¿¼Óµµ: " + statsHandler.CurrentStates.speed);
+        Debug.Log("ì´ë™ì†ë„: " + statsHandler.CurrentStates.speed);
     }
 
+    public void ShowToolTip(Vector3 position, Item item)
+    {
+        slotToolTip.OpenToolTipUI(position, item);
+    }
+
+    public void HideToolTip()
+    {
+        slotToolTip.CloseToolTipUI();
+    }
 }
