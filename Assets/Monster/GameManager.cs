@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,4 +30,8 @@ public class GameManager : MonoBehaviour
         playerHpSlider.value = healthSystem.CurrentHealth / healthSystem.MaxHealth;
     }
 
+    public static implicit operator GameManager(TopDownEnemyController v)
+    {
+        return instance;
+    }
 }

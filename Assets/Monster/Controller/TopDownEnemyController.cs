@@ -7,16 +7,27 @@ public class TopDownEnemyController : TopDownCharacterController
     GameManager gameManager;
 
     protected Transform ClosestTarget { get; private set; }
+    public static GameManager instance;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
+        if (GameManager.instance == null)
+        {
+            GameManager.instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     protected virtual void Start()
     {
         gameManager = GameManager.instance;
-        ClosestTarget = gameManager.Player;
+        if (gameManager != null)
+        {
+            ClosestTarget = gameManager.Player;
+        }
     }
 
     protected virtual void FixedUpdate()

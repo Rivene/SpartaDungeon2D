@@ -61,13 +61,9 @@ public class TopDownContactEnemyController : TopDownEnemyController
             return;
         }
 
-        _collidingTargetHealthSystem = receiver.GetComponent<HealthSystem>();
-        if (_collidingTargetHealthSystem != null)
-        {
-            _isCollidingWithTarget = true;
-        }
-
-        _collidingMovement = receiver.GetComponent<TopDownMovement>();
+        _isCollidingWithTarget = false;
+        _collidingTargetHealthSystem = null;
+        _collidingMovement = null;
     }
 
     private void OnTriggerExit2D(Collider2D collision)

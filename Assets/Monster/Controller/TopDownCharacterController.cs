@@ -27,7 +27,7 @@ public class TopDownCharacterController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if (Stats.CurrentStates.attackSO == null)
+        if (Stats == null || Stats.CurrentStates.attackSO == null)
             return;
 
         if (_timeSinceLastAttack <= Stats.CurrentStates.attackSO.delay)

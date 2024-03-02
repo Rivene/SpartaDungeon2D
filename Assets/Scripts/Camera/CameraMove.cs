@@ -21,7 +21,7 @@ public class CameraMove : MonoBehaviour
 
     void Start()
     {
-        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         height = Camera.main.orthographicSize;
         width = height * Screen.width / Screen.height;
