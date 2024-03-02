@@ -846,6 +846,7 @@ GameObject:
   - component: {fileID: 196994541}
   - component: {fileID: 196994540}
   - component: {fileID: 196994539}
+  - component: {fileID: 196994542}
   m_Layer: 5
   m_Name: ToolTip
   m_TagString: Untagged
@@ -929,6 +930,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196994537}
   m_CullTransparentMesh: 1
+--- !u!114 &196994542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196994537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 752a8b9bdfd216040a16e1925426cae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolTipUi: {fileID: 196994537}
+  itemNameText: {fileID: 344254937}
+  itemDescriptionText: {fileID: 1310379409}
 --- !u!1 &200080065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4041,6 +4057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSO: {fileID: 11400000, guid: 31b3ab57607e59d41ace501cbf8232d9, type: 2}
   playerController: {fileID: 1543753267}
+  slotToolTip: {fileID: 196994542}
 --- !u!4 &1856829780
 Transform:
   m_ObjectHideFlags: 0

@@ -34,7 +34,7 @@ public class ItemPickup : MonoBehaviour
             PickUpText();
             if (other != null && canPickup) //아이템 줍기
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKey(KeyCode.Space))
                 {
                     inventory.AquireItem(other.transform.GetComponent<Items>().item); //아이템 정보
                     Destroy(other.gameObject);

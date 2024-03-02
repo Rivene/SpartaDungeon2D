@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +9,12 @@ public class ItemDataManager : MonoBehaviour
     public AttackSO attackSO;
     [SerializeField] private PlayerController playerController;
     private Item item;
+    [SerializeField] private ToolTip slotToolTip;
 
     private void Awake()
     {
         I = this;
-        playerController = GameManager.instance.Player.GetComponent<PlayerController>(); // ÇÃ·¹ÀÌ¾îÀÇ PlayerController °¡Á®¿À±â
+        playerController = GameManager.instance.Player.GetComponent<PlayerController>(); // í”Œë ˆì´ì–´ì˜ PlayerController ê°€ì ¸ì˜¤ê¸°
 
     }
 
@@ -21,7 +22,7 @@ public class ItemDataManager : MonoBehaviour
     {
         //attackItem.UseAttack();
         attackSO.power += item.powerup;
-        Debug.Log("°ø°İ·Â : " + attackSO.power);
+        Debug.Log("ê³µê²©ë ¥ : " + attackSO.power);
     }
     
     public void HealUP(HealthSystem healthSystem, Item item)
@@ -31,14 +32,23 @@ public class ItemDataManager : MonoBehaviour
         //healItem.UseHeal(statsHandler);
         healthSystem.ChangeHealth(item.healup);
         healthSystem.CurrentHealth = Mathf.Clamp(healthSystem.CurrentHealth, 0, healthSystem.MaxHealth);
-        Debug.Log("Ã¼·Â : " + healthSystem.CurrentHealth);
+        Debug.Log("ì²´ë ¥ : " + healthSystem.CurrentHealth);
     }
 
     public void SpeedUP(CharacterStatsHandler statsHandler,Item item)
     {
         playerController.moveSpeed += item.speedup;
         statsHandler.CurrentStates.speed = playerController.moveSpeed;
-        Debug.Log("ÀÌµ¿¼Óµµ: " + statsHandler.CurrentStates.speed);
+        Debug.Log("ì´ë™ì†ë„: " + statsHandler.CurrentStates.speed);
     }
 
+    public void ShowToolTip(Vector3 position, Item item)
+    {
+        slotToolTip.OpenToolTipUI(position, item);
+    }
+
+    public void HideToolTip()
+    {
+        slotToolTip.CloseToolTipUI();
+    }
 }
