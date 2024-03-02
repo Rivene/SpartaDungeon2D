@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,5 +14,10 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         Player = GameObject.FindGameObjectWithTag(playerTag).transform;
+    }
+
+    public static implicit operator GameManager(TopDownEnemyController v)
+    {
+        return instance;
     }
 }
