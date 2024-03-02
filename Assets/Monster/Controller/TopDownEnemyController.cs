@@ -16,7 +16,14 @@ public class TopDownEnemyController : TopDownCharacterController
     protected virtual void Start()
     {
         gameManager = GameManager.Instance;
-        ClosestTarget = gameManager.Player;
+        if (gameManager != null)
+        {
+            ClosestTarget = gameManager.Player;
+            if (ClosestTarget != null)
+            {
+                Debug.Log("ClosestTarget is set to: " + ClosestTarget.name);
+            }
+        }
     }
 
     protected virtual void FixedUpdate()
@@ -26,11 +33,25 @@ public class TopDownEnemyController : TopDownCharacterController
 
     protected float DistanceTotarget()
     {
-        return Vector3.Distance(transform.position, ClosestTarget.position);
+        if (ClosestTarget != null)
+        {
+            return Vector3.Distance(transform.position, ClosestTarget.position);
+        }
+        else
+        {
+            return float.MaxValue;
+        }
     }
 
     protected Vector2 DirectionToTarget()
     {
-        return (ClosestTarget.position - transform.position).normalized;
+        if (ClosestTarget != null)
+        {
+            return (ClosestTarget.position - transform.position).normalized;
+        }
+        else
+        {
+            return Vector2.zero;
+        }
     }
 }

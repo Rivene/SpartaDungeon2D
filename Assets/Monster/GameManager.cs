@@ -140,14 +140,16 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-
     void CreateReward()
     {
         int idx = Random.Range(0, rewards.Count);
         int posIdx = Random.Range(0, spawnPostions.Count);
 
         GameObject obj = rewards[idx];
-        Instantiate(obj, spawnPostions[posIdx].position, Quaternion.identity);
+        if (obj != null)
+        {
+            Instantiate(obj, spawnPostions[posIdx].position, Quaternion.identity);
+        }
     }
 
     void UpgradeStatInit()
