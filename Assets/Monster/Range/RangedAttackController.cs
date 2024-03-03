@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class RangedAttackController : MonoBehaviour
 {
@@ -23,7 +26,6 @@ public class RangedAttackController : MonoBehaviour
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _trailRenderer = GetComponent<TrailRenderer>();
-        _attackData = GetComponent<RangedAttackData>();
     }
 
     private void Update()
@@ -91,6 +93,10 @@ public class RangedAttackController : MonoBehaviour
 
     private void DestroyProjectile(Vector3 position, bool creatFx)
     {
+        if (creatFx)
+        {
+           // _projectileManager.CreateImpactParticlesAtPostion(position, _attackData);
+        }
         gameObject.SetActive(false);
     }
 }
