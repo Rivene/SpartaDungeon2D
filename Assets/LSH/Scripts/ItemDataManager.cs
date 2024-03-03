@@ -7,24 +7,26 @@ public class ItemDataManager : MonoBehaviour
     public static ItemDataManager I;
 
     public AttackSO attackSO;
-    [SerializeField] private TopDownCharacterController playerController;
 
     private Item item;
-    [SerializeField] private ToolTip slotToolTip;
 
     private void Awake()
     {
         I = this;
-       // playerController = GameManager.instance.Player.GetComponent<TopDownCharacterController>(); // �÷��̾��� PlayerController ��������
     }
 
     public void AttackUP(Item item)
     {
-        //attackItem.UseAttack();
+        // CharacterStatsHandler의 AttackSO를 수정
         attackSO.power += item.powerup;
         Debug.Log("공격력 : " + attackSO.power);
     }
-    
+
+    public void AttackReset()
+    {
+        attackSO.power = 1f;
+    }
+
     public void HealUP(HealthSystem healthSystem, Item item)
     {
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -37,18 +39,8 @@ public class ItemDataManager : MonoBehaviour
 
     public void SpeedUP(CharacterStatsHandler statsHandler,Item item)
     {
-
-        statsHandler.CurrentStates.speed = playerController.moveSpeed;
+        statsHandler.CurrentStates.speed += item.speedup;
         Debug.Log("이동속도: " + statsHandler.CurrentStates.speed);
     }
 
-    public void ShowToolTip(Vector3 position, Item item)
-    {
-        slotToolTip.OpenToolTipUI(position, item);
-    }
-
-    public void HideToolTip()
-    {
-        slotToolTip.CloseToolTipUI();
-    }
 }

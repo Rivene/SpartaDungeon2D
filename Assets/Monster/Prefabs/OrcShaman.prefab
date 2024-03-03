@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 4819948101020866436}
   - component: {fileID: 9019962452561184917}
   - component: {fileID: 3192153229563836901}
+  - component: {fileID: -4302413300945513800}
   m_Layer: 6
   m_Name: OrcShaman
   m_TagString: Untagged
@@ -330,6 +331,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f60de2b26748d144afeac8b4c410f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4302413300945513800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3338536159954271435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6133a4be174d8f44a8f9c893459fee1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plusHp: {fileID: 5650480522648048065, guid: 2b847433d39695f4a9456da3ff24d625, type: 3}
+  plusSpeed: {fileID: 4283641418436220933, guid: 11a3219663d2df04e92ded7c7a2f898b, type: 3}
+  plusPower: {fileID: 7798781801937583426, guid: bc3dd7ac276507741a0cae48ca3c0a3a, type: 3}
 --- !u!1 &4455235277107148076
 GameObject:
   m_ObjectHideFlags: 0

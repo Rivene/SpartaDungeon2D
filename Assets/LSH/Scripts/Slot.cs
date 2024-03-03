@@ -78,17 +78,4 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (item != null)
-        {
-            ItemDataManager.I.ShowToolTip(transform.position, item);
-        }
-    }
-    
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        ItemDataManager.I.HideToolTip();
-    }
-
 }
