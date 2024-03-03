@@ -68,7 +68,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                         break;
 
                     case ItemType.Attack:
-                        ItemDataManager.I.AttackUP(item);
+                        ItemDataManager.I.AttackUP(statsHandler,item);
                         break;
                 }
 
@@ -76,19 +76,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
             }
         }
 
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (item != null)
-        {
-            ItemDataManager.I.ShowToolTip(transform.position, item);
-        }
-    }
-    
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        ItemDataManager.I.HideToolTip();
     }
 
 }
