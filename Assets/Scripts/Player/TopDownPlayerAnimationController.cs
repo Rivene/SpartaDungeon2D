@@ -53,4 +53,5 @@ public class TopDownPlayerAnimationController : TopDownAnimations
     {
         animator.SetBool(Death, true);
     }
+
 }
