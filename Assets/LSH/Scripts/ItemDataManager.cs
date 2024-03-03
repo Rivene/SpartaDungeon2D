@@ -15,7 +15,6 @@ public class ItemDataManager : MonoBehaviour
     private void Awake()
     {
         I = this;
-       // playerController = GameManager.instance.Player.GetComponent<TopDownCharacterController>(); // �÷��̾��� PlayerController ��������
     }
 
     public void AttackUP(Item item)
@@ -37,8 +36,7 @@ public class ItemDataManager : MonoBehaviour
 
     public void SpeedUP(CharacterStatsHandler statsHandler,Item item)
     {
-        playerController.moveSpeed += item.speedup;
-        statsHandler.CurrentStates.speed = playerController.moveSpeed;
+        statsHandler.CurrentStates.speed += item.speedup;
         Debug.Log("이동속도: " + statsHandler.CurrentStates.speed);
     }
 

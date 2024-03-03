@@ -13,7 +13,7 @@ public class CharacterStatsHandler : MonoBehaviour
 
     private const float MinSpeed = 0.8f;
 
-    private const int MinMaxHealth = 5;
+    private const int MinMaxHealth = 10;
 
     [SerializeField] private CharacterStats baseStats;
 

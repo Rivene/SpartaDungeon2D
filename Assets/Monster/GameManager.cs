@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpgradeStatInit();
-        StartCoroutine("StartNextWave");
+        StartCoroutine("StartNextWave");      
     }
 
     IEnumerator StartNextWave()
