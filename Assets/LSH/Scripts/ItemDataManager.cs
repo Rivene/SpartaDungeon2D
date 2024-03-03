@@ -15,11 +15,16 @@ public class ItemDataManager : MonoBehaviour
         I = this;
     }
 
-    public void AttackUP(CharacterStatsHandler statsHandler, Item item)
+    public void AttackUP(Item item)
     {
         // CharacterStatsHandler의 AttackSO를 수정
-        statsHandler.CurrentStates.attackSO.power += item.powerup;
-        Debug.Log("공격력 : " + statsHandler.CurrentStates.attackSO.power);
+        attackSO.power += item.powerup;
+        Debug.Log("공격력 : " + attackSO.power);
+    }
+
+    public void AttackReset()
+    {
+        attackSO.power = 1f;
     }
 
     public void HealUP(HealthSystem healthSystem, Item item)

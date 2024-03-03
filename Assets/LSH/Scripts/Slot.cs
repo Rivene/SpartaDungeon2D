@@ -68,7 +68,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                         break;
 
                     case ItemType.Attack:
-                        ItemDataManager.I.AttackUP(statsHandler,item);
+                        ItemDataManager.I.AttackUP(item);
                         break;
                 }
 
