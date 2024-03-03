@@ -37,7 +37,7 @@ public class ItemDataManager : MonoBehaviour
 
     public void SpeedUP(CharacterStatsHandler statsHandler,Item item)
     {
-        playerController.moveSpeed += item.speedup;
+
         statsHandler.CurrentStates.speed = playerController.moveSpeed;
         Debug.Log("이동속도: " + statsHandler.CurrentStates.speed);
     }

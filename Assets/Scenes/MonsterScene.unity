@@ -2846,6 +2846,8 @@ GameObject:
   - component: {fileID: 1045512895}
   - component: {fileID: 1045512894}
   - component: {fileID: 1045512893}
+  - component: {fileID: 1045512905}
+  - component: {fileID: 1045512906}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -3078,6 +3080,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1045512905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045512892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f51804a0287c964f987fd8a4f96d4e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickup:
+    serializedVersion: 2
+    m_Bits: 512
+  pickupText: {fileID: 746200358}
+--- !u!114 &1045512906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045512892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757768a3ec459bd47b2906f68ab89ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryUi: {fileID: 442327204}
+  slotsGridUi: {fileID: 718808358}
 --- !u!224 &1131008261 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2113359960945140779, guid: a97e752869dc0234a963482350fd3d9e, type: 3}
@@ -3868,7 +3900,6 @@ MonoBehaviour:
     maxHealth: 0
     speed: 0
     attackSO: {fileID: 0}
-  playerHpSlider: {fileID: 1020131879}
 --- !u!4 &1567745834
 Transform:
   m_ObjectHideFlags: 0
