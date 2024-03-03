@@ -62,6 +62,7 @@ public class RangedAttackController : MonoBehaviour
                         movement.ApplyKnockback(transform, _attackData.knockbackPower, _attackData.knockbackTime);
                     }
                 }
+                Debug.Log($"상대 체력:" + healthSystem.CurrentHealth);
             }
             DestroyProjectile(collision.ClosestPoint(transform.position), fxOnDestory);
         }
