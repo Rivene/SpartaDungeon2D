@@ -67,9 +67,9 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                         ItemDataManager.I.SpeedUP(statsHandler,item);
                         break;
 
-                    case ItemType.Attack:
-                        ItemDataManager.I.AttackUP(item);
-                        break;
+                    //case ItemType.Attack:
+                    //    ItemDataManager.I.AttackUP(item);
+                    //    break;
                 }
 
                 SetSlotCount(-1);

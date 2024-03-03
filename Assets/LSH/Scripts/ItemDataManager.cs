@@ -6,7 +6,7 @@ public class ItemDataManager : MonoBehaviour
 {
     public static ItemDataManager I;
 
-    public AttackSO attackSO;
+    //public AttackSO attackSO;
 
     private Item item;
 
@@ -15,17 +15,13 @@ public class ItemDataManager : MonoBehaviour
         I = this;
     }
 
-    public void AttackUP(Item item)
-    {
-        // CharacterStatsHandler의 AttackSO를 수정
-        attackSO.power += item.powerup;
-        Debug.Log("공격력 : " + attackSO.power);
-    }
+    //public void AttackUP(Item item)
+    //{
+    //    // CharacterStatsHandler의 AttackSO를 수정
+    //    attackSO.power += item.powerup;
+    //    Debug.Log("공격력 : " + attackSO.power);
+    //}
 
-    public void AttackReset()
-    {
-        attackSO.power = 1f;
-    }
 
     public void HealUP(HealthSystem healthSystem, Item item)
     {

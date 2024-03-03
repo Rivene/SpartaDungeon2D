@@ -49,8 +49,6 @@ public class GameManager : MonoBehaviour
         {
             spawnPostions.Add(spawnPositionsRoot.GetChild(i));
         }
-
-        ItemDataManager.I.AttackReset(); // 게임 시작시 공격력 리셋
     }
 
     private void Start()
