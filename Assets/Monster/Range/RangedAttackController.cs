@@ -23,6 +23,7 @@ public class RangedAttackController : MonoBehaviour
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _trailRenderer = GetComponent<TrailRenderer>();
+        _attackData = GetComponent<RangedAttackData>();
     }
 
     private void Update()
