@@ -7,11 +7,13 @@ public class DisappearOnDeath : MonoBehaviour
     private HealthSystem _healthSystem;
     private Rigidbody2D _rigidbody;
 
+    private SpawnItem _spawnItem;
     void Start()
     {
         _healthSystem = GetComponent<HealthSystem>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _healthSystem.OnDeath += OnDeath;
+        _spawnItem = GetComponent<SpawnItem>();
     }
 
     void OnDeath()
@@ -31,5 +33,7 @@ public class DisappearOnDeath : MonoBehaviour
         }
 
         Destroy(gameObject, 2f);
+
+        _spawnItem.ItemRandom(transform.position);
     }
 }

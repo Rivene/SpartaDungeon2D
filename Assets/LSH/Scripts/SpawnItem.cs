@@ -8,12 +8,6 @@ public class SpawnItem : MonoBehaviour
     public GameObject plusSpeed;
     public GameObject plusPower;
 
-    Vector3 monsterPosition;
-
-    private void Start()
-    {
-        Debug.Log(monsterPosition);
-    }
     public void ItemRandom(Vector3 position)
     {
         int spawnChance = Random.Range(0, 2);//아이템 생성할지 말지 랜덤
