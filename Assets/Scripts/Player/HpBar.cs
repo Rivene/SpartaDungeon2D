@@ -21,16 +21,21 @@ public class HpBar : MonoBehaviour
     private void Update()
     {
         timeCheck += Time.deltaTime;
-    }
-
-    private void OnTriggerEnter2D(UnityEngine.Collider2D coll)
-    {
-        if(coll.gameObject.tag == ("Arrow"))
+        hpSlider.value = maxHealth;
+        if(maxHealth > 100)
         {
-            Debug.Log("적원거리공격");
-            TakeDamage();
+            maxHealth = 100f;
         }
     }
+
+    //private void OnTriggerEnter2D(UnityEngine.Collider2D coll)
+    //{
+    //    if(coll.gameObject.tag == ("Arrow"))
+    //    {
+    //        Debug.Log("적원거리공격");
+    //        TakeDamage();
+    //    }
+    //}
     private void OnCollisionEnter2D(UnityEngine.Collision2D coll)
     {
         if (coll.gameObject.tag == ("Enemy"))
@@ -64,7 +69,6 @@ public class HpBar : MonoBehaviour
     {
         maxHealth -= damage;
 
-        hpSlider.value = maxHealth;
 
         if (maxHealth <= 0)
         {
