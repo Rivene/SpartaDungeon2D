@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 9075807489224044557}
   m_Layer: 6
   m_Name: Goblin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +258,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plusHp: {fileID: 5650480522648048065, guid: 2b847433d39695f4a9456da3ff24d625, type: 3}
   plusSpeed: {fileID: 4283641418436220933, guid: 11a3219663d2df04e92ded7c7a2f898b, type: 3}
-  plusPower: {fileID: 7798781801937583426, guid: bc3dd7ac276507741a0cae48ca3c0a3a, type: 3}
 --- !u!1 &8051425686141851969
 GameObject:
   m_ObjectHideFlags: 0

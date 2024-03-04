@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DungeonPortal
   - ExitPortal
+  - Enemy
   layers:
   - Default
   - TransparentFX
