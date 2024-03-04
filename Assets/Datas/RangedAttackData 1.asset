@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedAttackData
   size: 1
   delay: 0.15
-  power: 2
+  power: 1
   speed: 10
   target:
     serializedVersion: 2
@@ -27,4 +27,4 @@ MonoBehaviour:
   spread: 4
   numberofProjectilesPerShot: 1
   multipleProjectilesAngel: 7
-  projectileColor: {r: 1, g: 1, b: 1, a: 1}
+  projectileColor: {r: 1, g: 1, b: 1, a: 0}
