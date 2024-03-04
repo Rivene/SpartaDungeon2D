@@ -25,7 +25,7 @@ public class HpBar : MonoBehaviour
 
     private void OnCollisionEnter2D(UnityEngine.Collision2D coll)
     {
-        if (coll.gameObject.tag == ("Enemy"))
+        if (coll.gameObject.tag == ("Enemy") || coll.gameObject.tag == ("Arrow"))
         {
             TakeDamage();
             timeCheck = 0f;
