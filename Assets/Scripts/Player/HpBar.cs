@@ -23,9 +23,17 @@ public class HpBar : MonoBehaviour
         timeCheck += Time.deltaTime;
     }
 
+    private void OnTriggerEnter2D(UnityEngine.Collider2D coll)
+    {
+        if(coll.gameObject.tag == ("Arrow"))
+        {
+            Debug.Log("적원거리공격");
+            TakeDamage();
+        }
+    }
     private void OnCollisionEnter2D(UnityEngine.Collision2D coll)
     {
-        if (coll.gameObject.tag == ("Enemy") || coll.gameObject.tag == ("Arrow"))
+        if (coll.gameObject.tag == ("Enemy"))
         {
             TakeDamage();
             timeCheck = 0f;
