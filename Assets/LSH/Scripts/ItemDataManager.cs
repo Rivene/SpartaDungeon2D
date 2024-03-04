@@ -10,9 +10,12 @@ public class ItemDataManager : MonoBehaviour
 
     private Item item;
 
+    private HpBar hpBar;
+
     private void Awake()
     {
         I = this;
+        hpBar = FindObjectOfType<HpBar>();
     }
 
     //public void AttackUP(Item item)
@@ -25,12 +28,15 @@ public class ItemDataManager : MonoBehaviour
 
     public void HealUP(HealthSystem healthSystem, Item item)
     {
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        healthSystem = playerObject.GetComponent<HealthSystem>();
-        //healItem.UseHeal(statsHandler);
-        healthSystem.ChangeHealth(item.healup);
-        healthSystem.CurrentHealth = Mathf.Clamp(healthSystem.CurrentHealth, 0, healthSystem.MaxHealth);
-        Debug.Log("체력 : " + healthSystem.CurrentHealth);
+        //GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        //healthSystem = playerObject.GetComponent<HealthSystem>();
+        ////healItem.UseHeal(statsHandler);
+        //healthSystem.ChangeHealth(item.healup);
+        //healthSystem.CurrentHealth = Mathf.Clamp(healthSystem.CurrentHealth, 0, healthSystem.MaxHealth);
+        //Debug.Log("체력 : " + healthSystem.CurrentHealth);
+
+        hpBar.maxHealth += item.healup;
+        hpBar.maxHealth = Mathf.Clamp(hpBar.maxHealth, 0, 100f);
     }
 
     public void SpeedUP(CharacterStatsHandler statsHandler,Item item)

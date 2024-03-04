@@ -8,6 +8,8 @@ TagManager:
   - ExitPortal
   - Enemy
   - Arrow
+  - PlayerArrow
+  - EnemyArrow
   layers:
   - Default
   - TransparentFX

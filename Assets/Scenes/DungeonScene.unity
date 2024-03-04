@@ -6270,6 +6270,7 @@ MonoBehaviour:
   - {fileID: 5772986049609663580, guid: e4bdb0d7f7de71c44a7bec0b90c3d81d, type: 3}
   - {fileID: 3338536159954271435, guid: 6faf03e807ce363429ae5dd088b0e115, type: 3}
   spawnPosRoot: {fileID: 1281587275}
+  bossPrefab: {fileID: 8390225438610571373, guid: d54e16444fb776248b3e6edc7066e260, type: 3}
 --- !u!4 &1281587275
 Transform:
   m_ObjectHideFlags: 0
@@ -8481,7 +8482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   waveText: {fileID: 0}
-  gameOverUI: {fileID: 1405693578}
+  hpGaugeSlider: {fileID: 0}
   currentWaveIndex: 0
   spawnInterval: 0.5
   enemyPrefebs:

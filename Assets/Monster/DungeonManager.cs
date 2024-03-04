@@ -11,6 +11,9 @@ public class DungeonManager : MonoBehaviour
     public List<GameObject> enemyPrefabs = new List<GameObject>();
     [SerializeField] private Transform spawnPosRoot;
     private List<Transform> spawnPos = new List<Transform>();
+    public GameObject bossPrefab;
+
+    private FloorCount floor;
 
     private void Awake()
     {
@@ -18,11 +21,16 @@ public class DungeonManager : MonoBehaviour
         {
             spawnPos.Add(spawnPosRoot.GetChild(i));
         }
+
+        floor = FindObjectOfType<FloorCount>();
     }
 
     private void Start()
     {
-        StartCoroutine(CreateMonster());
+        if (floor.floor < 3)
+            StartCoroutine(CreateMonster());
+        else if(floor.floor == 3)
+            CreateBoss();
     }
 
     IEnumerator CreateMonster()
@@ -36,5 +44,10 @@ public class DungeonManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
 
         }
+    }
+
+    void CreateBoss()
+    {
+        GameObject enemy = Instantiate(bossPrefab);
     }
 }
