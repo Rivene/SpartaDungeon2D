@@ -27,4 +27,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("LobbyScene"); //·Îºñ¾À
     }
+
+    public void isEnding()
+    {
+        SceneManager.LoadScene("EndingScene"); //¿£µù
+    }
 }
