@@ -7,7 +7,6 @@ public enum ItemType //포션 사용을 위해
 {
     Heal,
     Speed,
-    Attack,
 }
 
 [CreateAssetMenu(fileName = "Item", menuName = "Item")]
@@ -24,7 +23,6 @@ public class Item : ScriptableObject
     [Header("Stats")]
     public int healup;
     public int speedup;
-    public int powerup;
     
     [Header("Type")]
     public ItemType type;
