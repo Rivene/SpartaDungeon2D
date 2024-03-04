@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class HPBtn : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private HpBar hpBar;
+
+    private void Awake()
     {
-        
+        hpBar = FindObjectOfType<HpBar>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void isHP()
     {
-        
+        hpBar.maxHealth += 10f;
     }
 }
