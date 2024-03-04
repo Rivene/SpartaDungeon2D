@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class HPBtn : MonoBehaviour
 {
-    private HpBar hpBar;
+    private FloorCount count;
 
     private void Awake()
     {
-        hpBar = FindObjectOfType<HpBar>();
+        count = FindObjectOfType<FloorCount>();
     }
 
     public void isHP()
     {
-        hpBar.maxHealth += 10f;
+        count.hp += 10f;
     }
 }
