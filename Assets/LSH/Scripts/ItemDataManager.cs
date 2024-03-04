@@ -26,7 +26,7 @@ public class ItemDataManager : MonoBehaviour
     //}
 
 
-    public void HealUP(HealthSystem healthSystem, Item item)
+    public void HealUP(Item item)
     {
         //GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         //healthSystem = playerObject.GetComponent<HealthSystem>();

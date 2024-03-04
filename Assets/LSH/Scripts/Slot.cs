@@ -60,7 +60,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
                 switch (item.type)
                 {
                     case ItemType.Heal:
-                        ItemDataManager.I.HealUP(healthSystem,item);
+                        ItemDataManager.I.HealUP(item);
                         break;
 
                     case ItemType.Speed:
