@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 58169345}
   - component: {fileID: 58169359}
   - component: {fileID: 58169358}
+  - component: {fileID: 58169360}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -420,6 +421,41 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   pickupText: {fileID: 121840541}
+--- !u!58 &58169360
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58169343}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1, y: 0.2}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1 &58438129
 GameObject:
   m_ObjectHideFlags: 0
@@ -6290,6 +6326,7 @@ MonoBehaviour:
   - {fileID: 5772986049609663580, guid: e4bdb0d7f7de71c44a7bec0b90c3d81d, type: 3}
   - {fileID: 3338536159954271435, guid: 6faf03e807ce363429ae5dd088b0e115, type: 3}
   spawnPosRoot: {fileID: 1281587275}
+  bossPrefab: {fileID: 8390225438610571373, guid: d54e16444fb776248b3e6edc7066e260, type: 3}
 --- !u!4 &1281587275
 Transform:
   m_ObjectHideFlags: 0

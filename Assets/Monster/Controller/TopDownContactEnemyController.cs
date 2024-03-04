@@ -61,9 +61,13 @@ public class TopDownContactEnemyController : TopDownEnemyController
             return;
         }
 
-        _isCollidingWithTarget = false;
-        _collidingTargetHealthSystem = null;
-        _collidingMovement = null;
+        _collidingTargetHealthSystem = receiver.GetComponent<HealthSystem>();
+        if (_collidingTargetHealthSystem != null)
+        {
+            _isCollidingWithTarget = true;
+        }
+
+        _collidingMovement = receiver.GetComponent<TopDownMovement>();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -83,5 +87,6 @@ public class TopDownContactEnemyController : TopDownEnemyController
         {
             _collidingMovement.ApplyKnockback(transform, attackSO.knockbackPower, attackSO.knockbackTime);
         }
+        Debug.Log("Ã¼·Â : " + healthSystem.CurrentHealth);
     }
 }
