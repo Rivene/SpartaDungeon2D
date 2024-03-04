@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI waveText;
     [SerializeField] private Slider hpGaugeSlider;
-    [SerializeField] private GameObject gameOverUI;
-
     [SerializeField] private int currentWaveIndex = 0;
     private int currentSpawnCount = 0;
     private int waveSpawnCount = 0;
@@ -43,7 +41,6 @@ public class GameManager : MonoBehaviour
         playerHealthSystem.OnHeal += UpdateHealthUI;
         playerHealthSystem.OnDeath += GameOver;
 
-        gameOverUI.SetActive(false);
 
         for (int i = 0; i < spawnPositionsRoot.childCount; i++)
         {
@@ -122,7 +119,6 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        gameOverUI.SetActive(true);
         StopAllCoroutines();
     }
 

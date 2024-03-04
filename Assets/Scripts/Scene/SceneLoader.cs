@@ -32,4 +32,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("EndingScene"); //¿£µù
     }
+
+    public void isDeath()
+    {
+        SceneManager.LoadScene("DeathScene"); //»ç¸Á
+    }
 }
