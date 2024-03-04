@@ -15,6 +15,7 @@ public class ReStartBtn : MonoBehaviour
     public void isRestartBtn()
     {
         floorCount.floor = 1;
+        floorCount.hp = 100f;
         loader.isStartBtn();
     }
 }

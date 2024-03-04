@@ -29,14 +29,14 @@ public class HpBar : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter2D(UnityEngine.Collider2D coll)
-    //{
-    //    if (coll.gameObject.tag == ("EnemyArrow"))
-    //    {
-    //        Debug.Log("적원거리공격");
-    //        TakeDamage();
-    //    }
-    //}
+    private void OnTriggerEnter2D(UnityEngine.Collider2D coll)
+    {
+        if (coll.gameObject.tag == ("EnemyArrow"))
+        {
+            Debug.Log("적원거리공격");
+            TakeDamage();
+        }
+    }
     private void OnCollisionEnter2D(UnityEngine.Collision2D coll)
     {
         if (coll.gameObject.tag == ("Enemy"))
