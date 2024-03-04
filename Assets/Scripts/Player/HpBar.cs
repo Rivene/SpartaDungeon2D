@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class HpBar : MonoBehaviour
 {
     private SceneLoader loader;
+    private FloorCount count;
     public Slider hpSlider; 
-    public float maxHealth = 100f; 
     public float damage = 10f;
     public float damageDelay = 1f;
 
@@ -16,15 +16,16 @@ public class HpBar : MonoBehaviour
     private void Awake()
     {
         loader = FindObjectOfType<SceneLoader>();
+        count = FindObjectOfType<FloorCount>();
     }
 
     private void Update()
     {
         timeCheck += Time.deltaTime;
-        hpSlider.value = maxHealth;
-        if(maxHealth > 100)
+        hpSlider.value = count.hp;
+        if(count.hp > 100)
         {
-            maxHealth = 100f;
+            count.hp = 100f;
         }
     }
 
@@ -67,10 +68,10 @@ public class HpBar : MonoBehaviour
 
     private void TakeDamage()
     {
-        maxHealth -= damage;
+        count.hp -= damage;
 
 
-        if (maxHealth <= 0)
+        if (count.hp <= 0)
         {
             Debug.Log("게임오버");
             loader.isDeath();

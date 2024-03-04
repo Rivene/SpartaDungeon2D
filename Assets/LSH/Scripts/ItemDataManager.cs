@@ -11,11 +11,13 @@ public class ItemDataManager : MonoBehaviour
     private Item item;
 
     private HpBar hpBar;
+    private FloorCount count;
 
     private void Awake()
     {
         I = this;
         hpBar = FindObjectOfType<HpBar>();
+        count = FindObjectOfType<FloorCount>();
     }
 
     //public void AttackUP(Item item)
@@ -35,8 +37,8 @@ public class ItemDataManager : MonoBehaviour
         //healthSystem.CurrentHealth = Mathf.Clamp(healthSystem.CurrentHealth, 0, healthSystem.MaxHealth);
         //Debug.Log("체력 : " + healthSystem.CurrentHealth);
 
-        hpBar.maxHealth += item.healup;
-        hpBar.maxHealth = Mathf.Clamp(hpBar.maxHealth, 0, 100f);
+        count.hp += item.healup;
+        count.hp = Mathf.Clamp(count.hp, 0, 100f);
     }
 
     public void SpeedUP(CharacterStatsHandler statsHandler,Item item)
