@@ -21,7 +21,7 @@ Unity 2D 게임 팀 프로젝트
 24.02.26(월) ~ 24.03.04(월)
 
 ## 유니티 버전
-Unity Editor Version 2022.3.2f1
+Unity Editor Version 2022.3.2f1   
 IDE: Visual Studio 2022
 
 ## 게임 플레이
